@@ -12,7 +12,7 @@ public class AboutUsPage extends BasePage {
         return result;
     }
 
-    public boolean isAboutUsPageOpened() {
+    public boolean isAboutUsPageLoaded() {
         Boolean isAboutPageOpened = elementExists("//h3[contains(text(),'Voluptatem')]");
         return isAboutPageOpened;
     }

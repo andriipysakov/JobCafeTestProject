@@ -1,5 +1,4 @@
 import Pages.AboutUsPage;
-import Pages.HomePage;
 import Utils.UseCaseBase;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -27,7 +26,7 @@ public class AboutUsPageTest extends UseCaseBase {
     @Test
     public void aboutUsPageLoadTest() {
         logger.info("About Us Page load test");
-        Boolean success = aboutUsPage.isAboutUsPageOpened();
+        Boolean success = aboutUsPage.isAboutUsPageLoaded();
         aboutUsPage.takeScreenshot("AboutUsPageTest");
         assertTrue(success);
     }

@@ -1,4 +1,3 @@
-import Pages.AboutUsPage;
 import Pages.LoginPage;
 import Utils.UseCaseBase;
 import org.apache.logging.log4j.LogManager;
@@ -31,7 +30,7 @@ public class LoginPageTest extends UseCaseBase {
     @Test
     public void loginPageLoadTest() {
         logger.info("Login Page load test");
-        Boolean success = loginPage.isLoginPageOpened();
+        Boolean success = loginPage.isLoginPageLoaded();
         loginPage.takeScreenshot("LoginPageTest");
         assertTrue(success);
     }
@@ -47,7 +46,7 @@ public class LoginPageTest extends UseCaseBase {
         password.click();
         password.sendKeys("12345");
         webDriver.findElement(By.id("Submit")).click();
-        Boolean success = loginPage.isJobPageOpened();
+        Boolean success = loginPage.isJobPageLoaded();
         loginPage.takeScreenshot("JobPageTest");
         assertTrue(success);
     }

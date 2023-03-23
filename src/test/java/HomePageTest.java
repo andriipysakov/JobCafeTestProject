@@ -37,21 +37,5 @@ public class HomePageTest extends UseCaseBase {
         assertTrue(success);
     }
 
-//    @Test
-//    public void openLoginPageTest() {
-//        LoginPage loginPage = homePage.openLoginPage();
-//        boolean isLoaded = loginPage.isLoginPageTitleVisible();
-//        assertTrue(isLoaded);
-//    }
-//
-//    @Test
-//    public void booksResultPageLoadTest() {
-//        logger.info("Books Result Page load test");
-//        BooksResultsPage booksResultsPage = new BooksResultsPage();
-//        booksResultsPage.navigateToBooksResultsEnglishPage();
-//        Boolean success = booksResultsPage.isBooksResultsEnglishPageVisible();
-//        booksResultsPage.takeScreenshot("BooksResultPageTest");
-//        assertTrue(success);
-//    }
 
 }

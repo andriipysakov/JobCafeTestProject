@@ -12,12 +12,12 @@ public class LoginPage extends BasePage {
         return result;
     }
 
-    public boolean isLoginPageOpened() {
+    public boolean isLoginPageLoaded() {
         Boolean isLoginPageOpened = elementExists("//h3[contains(text(),'Log in')]");
         return isLoginPageOpened;
     }
 
-    public boolean isJobPageOpened() {
+    public boolean isJobPageLoaded() {
         Boolean isJobPageOpened = elementExists("//h2[contains(text(),'Jobs')]");
         return isJobPageOpened;
     }
