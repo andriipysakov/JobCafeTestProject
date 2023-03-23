@@ -1,12 +1,17 @@
 import Pages.AboutUsPage;
 import Pages.JobPage;
 import Utils.UseCaseBase;
+import com.sun.jdi.Value;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.core.util.Assert;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class JobPageTest extends UseCaseBase {
@@ -31,7 +36,46 @@ public class JobPageTest extends UseCaseBase {
         assertTrue(success);
     }
 
+    @Test
+    public void searchLocationTest() {
+        logger.info("Job location search test");
+        jobPage.searchLocationLoadTest();
+        // Search 1 location
+        WebElement location1 = webDriver.findElement(By.xpath("//*[text()='Toronto, ON, Canada']"));
+        String actualResult1 = location1.getText();
+        assertEquals("Toronto, ON, Canada", actualResult1);
+        // Search 2 location
+        WebElement location2 = webDriver.findElement(By.xpath("//*[text()='Chicago, IL, USA']"));
+        String actualResult2 = location2.getText();
+        assertEquals("Chicago, IL, USA", actualResult2);
 
+    }
+
+    @Test
+    public void searchPositionTest() {
+        logger.info("Job position search test");
+        jobPage.searchPositionLoadTest();
+        // Search 1 position
+        WebElement position1 = webDriver.findElement(By.xpath("//h2[contains(text(),'Developer')]"));
+        String actualResult1 = position1.getText();
+        assertEquals(true, actualResult1.contains("Developer"));
+        // Search 2 position
+        WebElement position2 = webDriver.findElement(By.xpath("//h2[contains(text(),'QA')]"));
+        String actualResult2 = position2.getText();
+        assertEquals(true, actualResult2.contains("QA"));
+
+    }
+
+    @Test
+    public void searchCompanyTest() {
+        logger.info("Job company search test");
+        jobPage.searchCompanyLoadTest();
+        // Search 1 company
+        WebElement company1 = webDriver.findElement(By.xpath("//b[contains(text(),'Apple')]"));
+        String actualResult1 = company1.getText();
+        assertEquals(true, actualResult1.contains("Apple"));
+
+    }
 
 
 }
