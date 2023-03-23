@@ -12,8 +12,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class JobPageTest extends UseCaseBase {
     private static JobPage jobPage;
@@ -90,6 +89,7 @@ public class JobPageTest extends UseCaseBase {
         assertEquals(true, actualResult.contains("manager"));
 
     }
+
     @Test
     public void searchNoResultTest() throws InterruptedException {
         logger.info("Job No result search test");
@@ -97,7 +97,26 @@ public class JobPageTest extends UseCaseBase {
         Thread.sleep(1000);
         WebElement noResult = webDriver.findElement(By.xpath("//div[@class='col-lg-8 entries']"));
         String actualResult = noResult.getText();
-        assertEquals("found 0 items", actualResult);
+        assertEquals("No results found! Please try different search criteria", actualResult);
+
+    }
+
+    @Test
+    public void resetTest() {
+        logger.info("Job reset test");
+        jobPage.buttonResetTest();
+        WebElement resetPosition = webDriver.findElement(By.xpath("//input[@name='position']"));
+        String actualPosition = resetPosition.getText();
+        assertEquals("", actualPosition);
+        WebElement resetLocation = webDriver.findElement(By.xpath("//input[@name='location']"));
+        String actualLocation = resetLocation.getText();
+        assertEquals("", actualLocation);
+        WebElement resetCompany = webDriver.findElement(By.xpath("//input[@name='company']"));
+        String actualCompany = resetCompany.getText();
+        assertEquals("", actualCompany);
+        WebElement resetDescription = webDriver.findElement(By.xpath("//input[@name='description']"));
+        String actualDescription = resetDescription.getText();
+        assertEquals("", actualDescription);
 
     }
 

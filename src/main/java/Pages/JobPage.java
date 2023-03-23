@@ -58,4 +58,20 @@ public class JobPage extends BasePage {
         searchPositionField.sendKeys("abracadabra");
         webDriver.findElement(By.xpath("//button[text()='search']")).click();
     }
+
+    public void buttonResetTest() {
+        WebElement searchPositionField = webDriver.findElement(By.xpath("//input[@name='position']"));
+        searchPositionField.click();
+        searchPositionField.sendKeys("Manager");
+        WebElement searchCompanyField = webDriver.findElement(By.xpath("//input[@name='company']"));
+        searchCompanyField.click();
+        searchCompanyField.sendKeys("Google");
+        WebElement searchLocationField = webDriver.findElement(By.xpath("//input[@name='location']"));
+        searchLocationField.click();
+        searchLocationField.sendKeys("USA");
+        WebElement searchDescriptionField = webDriver.findElement(By.xpath("//input[@name='description']"));
+        searchDescriptionField.click();
+        searchDescriptionField.sendKeys("role");
+        webDriver.findElement(By.xpath("//button[text()='reset']")).click();
+    }
 }
