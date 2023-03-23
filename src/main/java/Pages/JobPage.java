@@ -31,11 +31,31 @@ public class JobPage extends BasePage {
         searchPositionField.click();
         searchPositionField.sendKeys("QA, Developer, Project Manager");
         webDriver.findElement(By.xpath("//button[text()='search']")).click();
-    }public void searchCompanyLoadTest() {
+    }
+
+    public void searchCompanyLoadTest() {
         WebElement searchCompanyField = webDriver.findElement(By.xpath("//input[@name='company']"));
         searchCompanyField.click();
         searchCompanyField.sendKeys("Apple, Facebook, Google");
         webDriver.findElement(By.xpath("//button[text()='search']")).click();
     }
 
+    public void searchCombinedLoadTest() {
+        WebElement searchPositionField = webDriver.findElement(By.xpath("//input[@name='position']"));
+        searchPositionField.click();
+        searchPositionField.sendKeys("Manager");
+        WebElement searchCompanyField = webDriver.findElement(By.xpath("//input[@name='company']"));
+        searchCompanyField.click();
+        searchCompanyField.sendKeys("Google");
+        WebElement searchLocationField = webDriver.findElement(By.xpath("//input[@name='location']"));
+        searchLocationField.click();
+        searchLocationField.sendKeys("USA");
+        webDriver.findElement(By.xpath("//button[text()='search']")).click();
+    }
+    public void searchNoResultLoadTest() {
+        WebElement searchPositionField = webDriver.findElement(By.xpath("//input[@name='position']"));
+        searchPositionField.click();
+        searchPositionField.sendKeys("abracadabra");
+        webDriver.findElement(By.xpath("//button[text()='search']")).click();
+    }
 }
