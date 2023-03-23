@@ -74,4 +74,5 @@ public class JobPage extends BasePage {
         searchDescriptionField.sendKeys("role");
         webDriver.findElement(By.xpath("//button[text()='reset']")).click();
     }
+
 }

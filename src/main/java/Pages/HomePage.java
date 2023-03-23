@@ -1,7 +1,6 @@
 package Pages;
 
 import Consts.Consts;
-import org.openqa.selenium.By;
 
 public class HomePage extends BasePage {
 
