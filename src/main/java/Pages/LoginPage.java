@@ -16,7 +16,7 @@ public class LoginPage extends BasePage {
         Boolean isLoginPageOpened = elementExists("//h3[contains(text(),'Log in')]");
         return isLoginPageOpened;
     }
-
+//fgfdhrft
     public boolean isJobPageLoaded() {
         Boolean isJobPageOpened = elementExists("//h2[contains(text(),'Jobs')]");
         return isJobPageOpened;
